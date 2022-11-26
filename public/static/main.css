@@ -1,0 +1,135 @@
+body {
+    background: #fff8ee;
+    padding: 0;
+    margin: 0;
+    font-size: 10pt
+}
+
+.page_table {
+    width: 100%
+}
+
+.left_menu_cont {
+    border-right: 1px solid #c2c4c2;
+    min-width: 10%
+}
+.main_page_cont {
+    width: 100%;
+}
+
+.top_ad {
+    margin: 0;
+    padding: 8px 6px;
+    border-bottom: 1px solid black;
+    background: white;
+    transform: translate(-2px, -2px);
+}
+
+.top_ad h1 {
+    font-size: 12pt;
+    margin: 0;
+    padding: 0;
+}
+
+.left_menu {
+    padding: 8px 14px;
+    padding-top: 0;
+}
+.site_title {
+    font-size: 16pt;
+    padding: 16px 16px;
+    padding-bottom: 3px;
+    margin: 0;
+}
+.left_menu ul {
+    list-style: none;
+    padding-left: 6px;
+    font-size: 10pt;
+    margin: 12px 0;
+}
+
+@keyframes flag_anim {
+    0% {
+        width: 100%;
+        margin-left: 0%;
+    }
+    49.999% {
+        width: 0%;
+        margin-left: 100%;
+    }
+    50% {
+        margin-left: 0%;
+    }
+    to {
+        width: 100%;
+        margin-left: 0%;
+    }
+}
+
+.list_flag_bottom {
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(0, #5BCEFA 20%, #F5A9B8 20%, 40%, #FFFFFF 40%, 60%, #F5A9B8 60%, 80%, #5BCEFA 80%);
+/*    background-image: linear-gradient(180deg, #AE1C28 0, #AE1C28 33%, #FFF 33%, #FFF 67%, #21468B 67%, #21468B 100%);*/
+/*    animation: flag_anim 2s ease infinite;*/
+}
+
+.main_page {
+    padding: 6px;
+}
+.main_page h3 {
+    margin: 0;
+    padding-top: 6px;
+}
+
+table.page_table {
+    min-height: 100vh;
+    padding-bottom: 45px;
+}
+table.page_table tbody {
+    vertical-align: top;
+}
+
+hr {
+    border: 0px solid black;
+    border-bottom: 1px solid #b0b2b0;
+    height: 0;
+    max-height: 0;
+}
+
+hr.list_separator {
+    margin: 10px 0;
+}
+table, tbody, tr, td {
+    margin: 0;
+    padding: 0;
+}
+tbody {
+    transform: translate(-2px, -2px);
+}
+
+a {
+    font-weight: 600;
+    font-family: sans-serif;
+    color: #2353ad;
+    text-decoration: none;
+    font-size:95%;
+    text-shadow: 0 1px 1px #30323005;
+    transition: 250ms ease;
+    padding-left: 0px;
+}
+a:visited {
+    font-size: 92%
+}
+a:hover {
+    padding-left: 1px;
+}
+.bottom_text {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #fff8ee;
+    margin: 0;
+    padding: 10px 12px;
+    width: 100%
+}
