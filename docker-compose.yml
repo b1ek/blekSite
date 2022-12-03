@@ -10,7 +10,6 @@ services:
             dockerfile: Dockerfile
         volumes:
             - '.:/var/www/html'
-            - './nginx.conf:/etc/nginx'
         environment:
             WWWUSER: '${WWWUSER}'
             XDEBUG_MODE: '${XDEBUG_MODE:-off}'
@@ -30,8 +29,8 @@ services:
             POSTGRES_USER: '${DB_USERNAME}'
             POSTGRES_PASSWORD: '${DB_PASSWORD}'
             PGDATA: '/var/lib/pgsql/data'
-        ports:
-            - '5432:5432'
+#        ports:
+#            - '5432:5432'
         volumes:
             - './db:/var/lib/pgsql/data'
         networks:
@@ -39,8 +38,8 @@ services:
     redis:
         restart: always
         image: 'redis:alpine'
-        ports:
-            - '${FORWARD_REDIS_PORT:-6379}:6379'
+#        ports:
+#            - '${FORWARD_REDIS_PORT:-6379}:6379'
         volumes:
             - './redis:/data'
         networks:
@@ -49,6 +48,7 @@ services:
             test: ["CMD", "redis-cli", "ping"]
             retries: 3
             timeout: 5s
+
 networks:
     sail:
         driver: bridge

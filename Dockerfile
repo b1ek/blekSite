@@ -28,4 +28,9 @@ RUN mkdir -p /var/run/php && \
 # install composer
 RUN apt-get install composer -y
 
+# copy config
+COPY nginx.conf /etc/nginx
+
+RUN chown -R nginx:nginx /etc/nginx && chmod -R 770 /etc/nginx
+
 EXPOSE 80

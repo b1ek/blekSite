@@ -40,7 +40,10 @@ Route::get('/login', function (Request $r) {
         if (ENV('ADMIN_LOGIN', 'blek') != $_GET['1']) return;
         if (ENV('ADMIN_PASSW', '') != hash('sha256', $_GET['2'] . ENV('ADMIN_PSALT'))) return;
         $r->session()->put('admin_auth', array($_GET['1'], hash('sha256', $_GET['2'] . ENV('ADMIN_PSALT'))));
-        return redirect()->to('/panel');
+        return redirect()->to('/panel')
+            // Dont save this in history
+            ->header('Cache-Control', 'no-store, no-cache, must-revalidate')
+            ->header('Expires', 'Sun, 2 Sep 1666 19:30:00 GMT');
     }
     return view('panel_login');
 });
@@ -57,3 +60,6 @@ Route::get('/project/{id}', function (Request $r, string $id) {
 
 Route::apiResource('/guestbook', \App\Http\Controllers\GuestbookController::class);
 Route::apiResource('/panel', \App\Http\Controllers\PanelController::class);
+
+if (ENV('APP_DEBUG'))
+    Route::get('/test', function() {return '';});

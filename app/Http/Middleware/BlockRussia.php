@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class AutoMigration
+class BlockRussia
 {
     /**
      * Handle an incoming request.
@@ -16,6 +16,9 @@ class AutoMigration
      */
     public function handle(Request $request, Closure $next)
     {
+        if (geoip($request->ip())->iso_code == 'RU') {
+            return view('no_russia');
+        }
         return $next($request);
     }
 }

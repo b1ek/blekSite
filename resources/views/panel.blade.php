@@ -2,6 +2,7 @@
     <h2>Admin panel</h2>
     <form>
         <input type='submit' value='Create a new blog record' name='new'></input>
+        <input type='submit' value='Migrate' name='migrate'></input>
     </form>
     <ul>
         @if (isset($data))

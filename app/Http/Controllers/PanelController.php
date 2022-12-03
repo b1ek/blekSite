@@ -24,6 +24,7 @@ class PanelController extends Controller
         $this->check_adm($r);
         if (isset($_GET['_token'])) return $this->action();
         if (isset($_GET['new'])) return redirect()->to('/panel/new');
+        if (isset($_GET['migrate'])) return redirect()->to('/panel/migrate');
         
         $data = DB::table('blog')
             ->get();
@@ -90,5 +91,9 @@ class PanelController extends Controller
             return redirect()->to('/panel');
         }
         return view('new_blog');
+    }
+
+    protected function migrate() {
+        return view('migrated', array('output' => Artisan::call('migrate:refresh', array('--force' => true))))
     }
 }
