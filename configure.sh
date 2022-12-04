@@ -67,5 +67,5 @@ docker exec -it blek-server-1 php artisan migrate
 docker-compose down
 
 echo
-echo "All set up! The website is ready to run, just type \033[1;36m\033[1mdocker-compose up -d\033[0m and you're ready to go production\!"
+echo -e "All set up! The website is ready to run, just type \033[1;36m\033[1mdocker-compose up -d\033[0m and you're ready to go production\!"
 exit 0
