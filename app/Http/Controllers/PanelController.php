@@ -94,6 +94,6 @@ class PanelController extends Controller
     }
 
     protected function migrate() {
-        return view('migrated', array('output' => Artisan::call('migrate:refresh', array('--force' => true))))
+        return view('migrated', array('output' => Artisan::call('migrate:refresh', array('--force' => true))));
     }
 }
