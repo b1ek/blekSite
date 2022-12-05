@@ -8,7 +8,29 @@ $noad = request()->session()->get('noad', false);
 <head>
 <x-embed-style src='/static/main.css'></x-embed-style>
 <link rel="shortcut icon" href="data:image/png;base64," type="image/x-icon"> 
-<title>blek! Site</title>
+<title>blek! Site
+@if (ENV('APP_DEBUG'))
+(DEBUG)
+@endif
+</title>
+
+{{-- Fonts --}}
+<x-embed-style>
+@font-face {
+    font-family: 'Open Sans';
+    src: url(data:font/truetype;charset=utf-8;base64,{!!base64_encode(file_get_contents(public_path() . '/static/OpenSans.ttf'))!!});
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-weight: bold;
+    src: url(data:font/truetype;charset=utf-8;base64,{!!base64_encode(file_get_contents(public_path() . '/static/OpenSansBold.ttf'))!!});
+}
+</x-embed-style>
+
+@if (isset($style))
+<x-embed-style>{!! $style !!}</x-embed-style>
+@endif
+
 </head>
 
 @php
@@ -22,6 +44,11 @@ $menu_items = array(
     '---',
     'Guestbook' => '/guestbook'
 );
+@endphp
+
+@php
+$announcef = json_decode(file_get_contents(public_path() . '/announce.json'));
+$announce = $announcef->broadcast;
 @endphp
 
 <body>
@@ -67,6 +94,16 @@ $menu_items = array(
                             </tr>
                         </tbody>
                     </table>
+                </div>
+                @endif
+                @if ($announce)
+                <div class='announcement' title='Announcement'>
+                    <h1>
+                        Announcement: {!!$announcef->data->inline!!}
+                        @if (isset($announcef->data->url))
+                        <a style='font-size:9pt' href='{!!$announcef->data->url!!}' target='_blank'>(learn more)</a>
+                        @endif
+                    </h1>
                 </div>
                 @endif
                 <div class='main_page'>

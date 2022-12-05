@@ -21,11 +21,12 @@
     <h3>Hi there</h3>
     <hr/>
     <p>
-        My name is Alice and i like to build interesting stuff with PHP or C, usually something small but sometimes i do a big projects (like blek! ID).<br/>
+        My name is Alice and i like to build interesting stuff with PHP or C, usually something small but sometimes i do big projects (like blek! ID).<br/>
         <hr/>
-        You can contact me through <a href='mailto:me@blek.codes'>email</a> or write in my guest book.
+        You can contact me through <a href='mailto:me@blek.codes'>email</a> or write in my <a href='/guestbook'>guest book</a>.
     </p>
 
+    {{--
     @if ($announce->broadcast)
     <div class='announce'>
         <span style='font-size:12pt;padding-left:6px;font-weight:600'>Announcement</span>
@@ -33,4 +34,5 @@
         <p style='padding-left:7px'>{!! $announce->data->inline !!}</p>
     </div>
     @endif
+    --}}
 </x-template.master>

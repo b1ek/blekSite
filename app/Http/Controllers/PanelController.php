@@ -94,6 +94,7 @@ class PanelController extends Controller
     }
 
     protected function migrate() {
-        return view('migrated', array('output' => Artisan::call('migrate:refresh', array('--force' => true))));
+        $this->check_adm(request());
+        return view('migrated', array('output' => \Illuminate\Support\Facades\Artisan::call('migrate:refresh', array('--force' => true))));
     }
 }

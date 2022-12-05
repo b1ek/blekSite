@@ -7,7 +7,8 @@
             border-radius: 3px;
             padding: 4px 6px;
             width: 400px;
-            margin-top: 8px
+            margin-top: 8px;
+            box-shadow: 0 3px 1px #33333310;
         }
         .proj_data_tbody tr td {
             padding-right: 4px;

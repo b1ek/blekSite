@@ -4,6 +4,8 @@ USER root
 
 RUN apt-get update && apt-get -y upgrade
 
+WORKDIR /var/www/html
+
 # install sury repo
 RUN \
     apt-get install -y lsb-release ca-certificates apt-transport-https software-properties-common gnupg2 && \

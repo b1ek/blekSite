@@ -7,16 +7,6 @@ body {
     font-family: 'Open Sans';
 }
 
-@font-face {
-    font-family: 'Open Sans';
-    src: url(/static/OpenSans.ttf);
-}
-@font-face {
-    font-family: 'Open Sans';
-    font-weight: bold;
-    src: url(/static/OpenSansBold.ttf);
-}
-
 .page_table {
     width: 100%
 }
@@ -130,12 +120,15 @@ a {
     transition: 300ms ease;
     transform: translateY(0px);
     display: inline-block;
+    position: relative;
+    bottom: 0px
 }
 a:visited {
     color: #236aad;
 }
 a:hover {
-    transform: translateY(-2px);
+    position: relative;
+    bottom: 2px;
 }
 .bottom_text {
     position: fixed;
@@ -156,4 +149,14 @@ a:hover {
 }
 .blog_posts {
     max-width: fit-content;
+}
+.announcement {
+    background: antiquewhite;
+    border-bottom: 1px solid #333333;
+    padding: 0 8px
+}
+.announcement h1 {
+    font-size: 13pt;
+    margin: 0;
+    padding: 12px 8px;
 }

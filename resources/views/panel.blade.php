@@ -13,7 +13,7 @@
                     @csrf
                     <input type='submit' value='Delete' name='del'></input>
                     <input type='submit' value='Edit' name='edit'></input>
-                    <input type='submit' value='View' name='view'></input>
+                    <a href='/blog#{{$d->id}}'><input type='button' value='View' name='view'></input></a>
                     <input type='submit' value='{{$d->hidden ? "Un-" : '' }}Hide' name='hide'></input>
                     <input type='hidden' value='{{$d->id}}' name='id'></input>
                 </form>
