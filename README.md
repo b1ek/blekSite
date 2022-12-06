@@ -1,6 +1,6 @@
 <h1 align='center'>blek! Site</h1>
 <hr/>
-My website's ([https://blek.codes](blek.codes)) source code.
+Source code of my <a href='https://blek.codes'>website</a>
 
 ### Common problems
 #### Can't log into database: role '***' does not exist
