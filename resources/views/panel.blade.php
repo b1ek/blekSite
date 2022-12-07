@@ -8,6 +8,8 @@
         @if (isset($data))
         @foreach ($data as $i => $d)
             <li {!! $d->hidden ? 'style="opacity:0.5"' : '' !!}>
+                <span style='font-family:monospace;margin-right:3px'>
+                [<a style='font-weight:500;text-decoration:underline' href='/blog#{{$d->id}}'>#{{$d->id}}</a>]</span>|                
                 {{$d->title}} | {{$d->author}} | {{date("d/M/Y H:i.s", $d->time)}} | 
                 <form style='display:inline'>
                     @csrf

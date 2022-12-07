@@ -39,14 +39,11 @@ class PanelController extends Controller
         if (!isset($_GET['id'])) abort(400);
 
         if (isset($_GET['hide'])) {
-            $code = DB::table('blog')
+            DB::table('blog')
                 ->where('id', $_GET['id'])
                 ->update(array(
                     'hidden' => DB::raw('not hidden')
                 ));
-            if (!$code) {
-                // well then its too fucking sad
-            }
         }
 
         if (isset($_GET['del'])) {
@@ -57,7 +54,7 @@ class PanelController extends Controller
 
         if (isset($_GET['edit'])) {
             $data = DB::table('blog')->where('id', $_GET['id'])->get();
-            return view('new_blog', (array) $data[0]);
+            return view('new_blog', array_merge(array('edit' => true), (array) $data[0]));
         }
         return redirect()->to('/panel');
     }
