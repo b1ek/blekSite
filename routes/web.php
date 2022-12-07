@@ -32,7 +32,7 @@ Route::get('/projects', function(Request $r) {
 });
 
 Route::get('/blog', function (Request $r) {
-    return view('blog', array('data' => DB::table('blog')->where('hidden', false)->get()));
+    return view('blog', array('data' => DB::table('blog')->where('hidden', false)->orderBy('id', 'asc')->get()));
 });
 
 Route::get('/login', function (Request $r) {

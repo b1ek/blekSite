@@ -27,6 +27,7 @@ class PanelController extends Controller
         if (isset($_GET['migrate'])) return redirect()->to('/panel/migrate');
         
         $data = DB::table('blog')
+            ->orderBy('id', 'asc')
             ->get();
         
         return view('panel', array('data' => $data));
