@@ -72,9 +72,9 @@ docker-compose build
 docker-compose up -d
 docker exec -it blek-server-1 php artisan migrate
 docker exec -it blek-server-1 chmod 775 -R /var/www/html/storage
-docker exec -it blek-server-1 chown www-data:www-data -R /var/www/html/storage
+docker exec -it blek-server-1 chown nobody:nobody -R /var/www/html/storage
 docker-compose down
 
 echo
-echo -e "All set up! The website is ready to run, just type \033[1;36m\033[1mdocker-compose up -d\033[0m and you're ready to go production\!"
+echo -e "All set up! The website is ready to run, just run \033[1;36m\033[1msail.sh\033[0m and you're ready to go production\!"
 exit 0

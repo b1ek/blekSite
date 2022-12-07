@@ -4,15 +4,9 @@ services:
     server:
         hostname: blek
         restart: always
-        image: nginx:alpine
-        build:
-            context: .
-            dockerfile: Dockerfile
+        image: blekii/sail:1.0.0
         volumes:
             - '.:/var/www/html'
-        environment:
-            WWWUSER: '${WWWUSER}'
-            XDEBUG_MODE: '${XDEBUG_MODE:-off}'
         ports:
             - '${APP_PORT:-80}:80'
         networks:
