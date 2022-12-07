@@ -16,6 +16,7 @@ class BlockRussia
      */
     public function handle(Request $request, Closure $next)
     {
+        if (in_array($request->ip(), explode(',', ENV('IP_EXCEPTIONS')))) return $next($request);
         if (geoip($request->ip())->iso_code == 'RU') {
             return view('no_russia');
         }
