@@ -4,7 +4,7 @@ services:
     server:
         hostname: blek
         restart: always
-        image: blekii/sail:1.0.0
+        image: blekii/sail:latest
         volumes:
             - '.:/var/www/html'
         ports:

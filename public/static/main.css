@@ -121,7 +121,8 @@ a {
     transform: translateY(0px);
     display: inline-block;
     position: relative;
-    bottom: 0px
+    bottom: 0px;
+    cursor: pointer;
 }
 a:visited {
     color: #236aad;

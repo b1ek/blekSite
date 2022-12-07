@@ -1,13 +1,13 @@
 <x-project name='blek! Sail' link='https://sail.blek.codes' author='blek' author_mail='me@blek.codes' source='https://github.com/b1ek/sail'>
     <p>
-        <x-embed-png style='background:#334448;padding:24px;border-radius:12px;border:1px solid #c2c4c2' width=500 src='/static/sail_logo.png'></x-embed-png>
+        <x-embed-png src='/static/sail_logo.png' style='background:#334448;padding:24px;border-radius:12px;border:1px solid #c2c4c2' width=500/>
         
         <br/>   
 
-        <img src='https://img.shields.io/docker/pulls/blekii/sail?style=plastic'></img>
-        <img src='https://img.shields.io/docker/v/blekii/sail?style=plastic'></img>
-        <img src='https://img.shields.io/badge/built%20with-%E2%9D%A4-ff005d?style=plastic'></img>
-        <img src='https://img.shields.io/github/last-commit/b1ek/sail?style=plastic'></img>
+        <a href='https://hub.docker.com/r/blekii/sail'><x-embed-svg src='https://img.shields.io/docker/pulls/blekii/sail?style=plastic'></x-embed-svg></a>
+        <a href='https://hub.docker.com/r/blekii/sail'><x-embed-svg src='https://img.shields.io/docker/v/blekii/sail?style=plastic'></x-embed-svg></a>
+        <a><x-embed-svg src='https://img.shields.io/badge/built%20with-%E2%9D%A4-ff005d?style=plastic'></x-embed-svg></a>
+        <a href='https://github.com/b1ek/sail'><x-embed-svg src='https://img.shields.io/github/last-commit/b1ek/sail?style=plastic'></x-embed-svg></a>
     </p>
     <p>
         blek! Sail is a production-ready alternative to Laravel Sail.<br/>
