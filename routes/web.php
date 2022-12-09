@@ -35,6 +35,17 @@ Route::get('/blog', function (Request $r) {
     return view('blog', array('data' => DB::table('blog')->where('hidden', false)->orderBy('id', 'asc')->get()));
 });
 
+Route::get('/blog/{id}', function (Request $r, string $id) {
+    if (is_numeric($id)) {
+        return view('blog_post', array(
+            'data' => DB::table('blog')->where('id', intval($id))->get()[0]
+        ));
+    }
+    return view('blog_port', array(
+        'data' => DB::table('blog')->where('title', str_replace('_', ' ', $id))->get()[0]
+    ));
+});
+
 Route::get('/login', function (Request $r) {
     if (isset($_GET['1'])) {
         if (ENV('ADMIN_LOGIN', 'blek') != $_GET['1']) return;

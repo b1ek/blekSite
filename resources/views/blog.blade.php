@@ -22,6 +22,7 @@
                         by {{$d->author}} <span style='padding-left:5px'></span>
                         {{date('d/M/Y H:i.s', $d->time)}} (<span style='font-size:6pt;user-select:all'>{{$d->time}}</span>)
                         (<a href='#{{$d->id}}' style='font-size:7pt'>permalink</a>)
+                        (<a href='/blog/{{$d->id}}' style='font-size:7pt'>view</a>)
                     </p>
                     <p style='margin:0;padding:2px 0;padding-bottom:6px;max-height:256px;overflow-y:scroll'>{!!$d->body!!}</p>
                 </td>
