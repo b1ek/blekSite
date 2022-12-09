@@ -17,7 +17,9 @@ $data = (array) $data;
         </p>
         <hr/>
         <h3 style='margin:10px 0'>{{$data['title']}}</h3>
-        {!! $data['body'] !!}
+        <div style='max-width:640px'>
+            {!! $data['body'] !!}
+        </div>
 
 
         @endif
