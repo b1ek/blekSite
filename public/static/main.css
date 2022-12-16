@@ -25,6 +25,7 @@ body {
     border-bottom: 1px solid black;
     background: white;
     transform: translate(-2px, -2px);
+	display:none;
 }
 
 .top_ad h1 {
