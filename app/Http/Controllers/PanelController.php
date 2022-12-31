@@ -29,7 +29,11 @@ class PanelController extends Controller
             ->orderBy('id', 'asc')
             ->get();
         
-        return view('panel', array('data' => $data));
+        $gb = DB::table('guestbook')
+            ->orderBy('id', 'asc')
+            ->get();
+        
+        return view('panel', array('data' => $data, 'gb' => $gb));
     }
 
     protected function action() {
@@ -56,6 +60,30 @@ class PanelController extends Controller
             return view('new_blog', array_merge(array('edit' => true), (array) $data[0]));
         }
         return redirect()->to('/panel');
+    }
+
+    public function gb_action() {
+        /* $data = DB::table('guestbook')
+            ->where('id', $_GET['id'])
+            ->get(); */
+        
+        if (isset($_GET['del'])) {
+            DB::table('guestbook')
+                ->where('id', $_GET['id'])
+                ->delete();
+            return redirect()->to('/panel');
+        }
+        
+        if (isset($_GET['hide'])) {
+            DB::table('guestbook')
+                ->where('id', $_GET['id'])
+                ->update(array(
+                    'hidden' => DB::raw('not hidden')
+                ));
+            return redirect()->to('/panel');
+        }
+
+        abort(400);
     }
 
     public function show(Request $r, string $path) {

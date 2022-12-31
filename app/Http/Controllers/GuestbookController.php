@@ -45,7 +45,7 @@ class GuestbookController extends Controller
         $id = intval(substr($path, 4));
         $res = DB::table('guestbook')
             ->where('id', $id)
-            ->update(array('hidden' => true));
+            ->delete();
         if (!$res)
             return redirect()->to('/guestbook')->withErrors(array('Database action failed'));
         return redirect()->to('/guestbook');
