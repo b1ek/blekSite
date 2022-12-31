@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class PanelController extends Controller
 {
@@ -11,13 +12,11 @@ class PanelController extends Controller
     public function check_adm(Request $r) {
         if (!$r->session()->has('admin_auth')) abort(404);
         $data = $r->session()->get('admin_auth');
-        if (
-            ENV('ADMIN_LOGIN', 'blek') != $data[0] ||
-            ENV('ADMIN_PASSW', '') != $data[1]
-        ) {
-            request()->session()->forget('admin_auth');
-            abort(404);
+        if (ENV('ADM_LOGIN', 'blek') != $data[0] ||
+            !Hash::check(ENV('ADM_PASSW', 'banana'), $data[1])) {exit($data[1]);
+            $r->session()->forget('admin_auth');
         }
+        return true;
     }
 
     public function index(Request $r) {

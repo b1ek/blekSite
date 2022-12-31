@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 /*
@@ -49,8 +50,8 @@ Route::get('/blog/{id}', function (Request $r, string $id) {
 Route::get('/login', function (Request $r) {
     if (isset($_GET['1'])) {
         if (ENV('ADMIN_LOGIN', 'blek') != $_GET['1']) return;
-        if (ENV('ADMIN_PASSW', '') != hash('sha256', $_GET['2'] . ENV('ADMIN_PSALT'))) return;
-        $r->session()->put('admin_auth', array($_GET['1'], hash('sha256', $_GET['2'] . ENV('ADMIN_PSALT'))));
+        if (Hash::check(ENV('ADMIN_PASSW'), Hash::make($_GET['2']))) return;
+        $r->session()->put('admin_auth', array($_GET['1'], Hash::make($_GET['2'])));
         return redirect()->to('/panel')
             // Dont save this in history
             ->header('Cache-Control', 'no-store, no-cache, must-revalidate')
@@ -71,6 +72,3 @@ Route::get('/project/{id}', function (Request $r, string $id) {
 
 Route::apiResource('/guestbook', \App\Http\Controllers\GuestbookController::class);
 Route::apiResource('/panel', \App\Http\Controllers\PanelController::class);
-
-if (ENV('APP_DEBUG'))
-    Route::get('/test', function() {return '';});
