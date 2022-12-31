@@ -13,7 +13,7 @@ class PanelController extends Controller
         if (!$r->session()->has('admin_auth')) abort(404);
         $data = $r->session()->get('admin_auth');
         if (ENV('ADM_LOGIN', 'blek') != $data[0] ||
-            !Hash::check(ENV('ADM_PASSW', 'banana'), $data[1])) {exit($data[1]);
+            !Hash::check(ENV('ADM_PASSW', 'banana'), $data[1])) {
             $r->session()->forget('admin_auth');
         }
         return true;
