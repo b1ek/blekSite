@@ -37,7 +37,8 @@ class GuestbookController extends Controller
 
     protected function prepare_data() {
         return DB::table('guestbook')
-            ->where('hidden', false)
+	    ->where('hidden', false)
+    	    ->orderBy('id', 'desc')
             ->get();
     }
 
