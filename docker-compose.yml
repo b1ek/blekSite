@@ -6,7 +6,7 @@ services:
         restart: always
         image: blekii/sail:latest
         volumes:
-            - '.:/var/www/html'
+            - './:/var/www/html'
         ports:
             - '${APP_PORT:-80}:80'
         networks:

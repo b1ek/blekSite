@@ -4,10 +4,10 @@
         
         <br/>   
 
-        <a href='https://hub.docker.com/r/blekii/sail'><x-embed-svg src='https://img.shields.io/docker/pulls/blekii/sail?style=plastic'></x-embed-svg></a>
-        <a href='https://hub.docker.com/r/blekii/sail'><x-embed-svg src='https://img.shields.io/docker/v/blekii/sail?style=plastic'></x-embed-svg></a>
-        <a><x-embed-svg src='https://img.shields.io/badge/built%20with-%E2%9D%A4-ff005d?style=plastic'></x-embed-svg></a>
-        <a href='https://github.com/b1ek/sail'><x-embed-svg src='https://img.shields.io/github/last-commit/b1ek/sail?style=plastic'></x-embed-svg></a>
+        <a href='https://hub.docker.com/r/blekii/sail'><img src='https://img.shields.io/docker/pulls/blekii/sail?style=plastic'></img></a>
+        <a href='https://hub.docker.com/r/blekii/sail'><img src='https://img.shields.io/docker/v/blekii/sail?style=plastic'></img></a>
+        <a><img src='https://img.shields.io/badge/built%20with-%E2%9D%A4-ff005d?style=plastic'></img></a>
+        <a href='https://github.com/b1ek/sail'><img src='https://img.shields.io/github/last-commit/b1ek/sail?style=plastic'></img></a>
     </p>
     <p>
         blek! Sail is a production-ready alternative to Laravel Sail.<br/>

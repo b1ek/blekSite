@@ -18,10 +18,8 @@
     </p>
 
     <p>
-        If anyone needs help with programming (with pretty much everything programming related i guess),<br/>
-        i usually hang out on
-        <span style='background:#33333333;padding:2px 6px;border-radius:3px;border:1px solid #3a3c3a33;user-select:all'>#just_stuff</span>
-        on libera chat, if you'd mention my nickname in a channel i would get a notification (don't DM me)<br/>
+        My GPG key: <span class='code'>14546221E3595D0C</span>
+        <a href='/gpgkey' target='_blank'>(download)</a>
     </p>
 
     <p>Tools i use</p>

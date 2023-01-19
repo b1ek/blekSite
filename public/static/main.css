@@ -1,5 +1,5 @@
 body {
-    background: #eaf2d7;
+    background: #eff3e4;
     padding: 0;
     margin: 0;
     font-size: 10pt;
@@ -136,7 +136,7 @@ a:hover {
     position: fixed;
     bottom: 0;
     left: 0;
-    background: #eaf2d7;
+    background: #eff3e4;
     margin: 0;
     padding: 10px 12px;
     width: 100%
@@ -161,4 +161,11 @@ a:hover {
     font-size: 13pt;
     margin: 0;
     padding: 12px 8px;
+}
+.code {
+    padding: 2px 4px;
+    background: #c0c0c040;
+    border: 1px solid #90909080;
+    border-radius: 4px 3px 3px 4px;
+    box-shadow: 0 2px 2px #33333311;
 }
