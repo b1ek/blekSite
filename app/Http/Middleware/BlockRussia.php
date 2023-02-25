@@ -15,7 +15,8 @@ class BlockRussia
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next)
-    {
+	{
+		if (ENV('NO_BLOCK')) return $next($request);
         if (in_array($request->ip(), explode(',', ENV('IP_EXCEPTIONS')))) return $next($request);
         if (geoip($request->ip())->iso_code == 'RU') {
             return view('no_russia');
