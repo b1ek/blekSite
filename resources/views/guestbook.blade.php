@@ -60,7 +60,7 @@
 		@if (str_starts_with($d->ip, '10.8.0.'))
 	                {!! $d->text !!}<br/>
 		@else
-			{{$d->text}}
+			{{ $d->text }}<br/>
 		@endif
                 <span style='color:#333333;font-size:8pt;font-style:oblique'>
                 This was sent from ip {{$d->ip}} at {{date('d/m/Y H:i s', $d->time)}} (<span style='font-size:7pt;user-select:all'>{{$d->time}}</span>)
